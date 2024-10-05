@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vehicle Data Result</title>
+</head>
+<body>
+    <h1>Vehicle Efficiency Report</h1>
+    <h2>Vehicles Efficiency</h2>
+    <ul>
+        {% for vehicle in vehicles %}
+            <li>Vehicle No: {{ vehicle.Vehicle_no }} - Efficiency: {{ vehicle.Efficiency }} km/l</li>
+        {% endfor %}
+    </ul>
+
+    <h2>Download Data</h2>
+    <a href="/download">Download Excel File</a>
+
+    <h2>View Plot</h2>
+    <img src="{{ url_for('static', filename='plot.png') }}" alt="Ticket Sales and Efficiency Plot">
+</body>
+</html> 
